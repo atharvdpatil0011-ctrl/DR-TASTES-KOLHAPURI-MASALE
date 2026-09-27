@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DR Tastes | Authentic Kolhapuri Kanda Lasun Masala</title>
+  <meta name="description" content="Experience the fiery eruption of authentic Kolhapuri flavors. Hand-pounded spices, sun-dried chilies, roasted onion, and garlic. Scroll to awaken the spice blend.">
+  
+  <!-- Google Fonts: Cinzel Decorative, Rozha One, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="announcement-track">
+      <span>🔥 100% AUTHENTIC KOLHAPUR HERITAGE</span>
+      <span class="dot">•</span>
+      <span>HAND-POUNDED SUN-DRIED SANKESHWARI CHILIES</span>
+      <span class="dot">•</span>
+      <span>SLOW-ROASTED ONION & GARLIC INFUSION</span>
+      <span class="dot">•</span>
+      <span>NO ARTIFICIAL COLOURS OR PRESERVATIVES</span>
+      <span class="dot">•</span>
+      <span>FREE DELIVERY ON ORDERS ABOVE ₹499</span>
+    </div>
+  </div>
+
+  <!-- Luxury Floating Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#scroll-hero" class="brand-logo" id="brandLogo">
+        <div class="logo-emblem">DR</div>
+        <div class="logo-text">
+          <span class="brand-name">DR TASTES</span>
+          <span class="brand-tagline">कोल्हापुरी कांदा लसूण मसाला</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#scroll-hero" class="nav-link active" id="navLinkExperience">Experience</a>
+        <a href="#spice-anatomy" class="nav-link" id="navLinkSpices">Spice Anatomy</a>
+        <a href="#heat-meter" class="nav-link" id="navLinkHeat">Heat Gauge</a>
+        <a href="#recipes" class="nav-link" id="navLinkRecipes">Royal Recipes</a>
+        <a href="#shop-section" class="nav-link" id="navLinkShop">Shop Packs</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Cart Button -->
+        <button class="cart-btn" id="cartOpenBtn" aria-label="View Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Preloader Screen -->
+  <div class="preloader-overlay" id="preloader">
+    <div class="preloader-card">
+      <div class="preloader-spice-pulse">
+        <div class="spice-ring ring-1"></div>
+        <div class="spice-ring ring-2"></div>
+        <div class="spice-ring ring-3"></div>
+        <div class="spice-core">DR</div>
+      </div>
+      <h2 class="preloader-title">Brewing Authentic Flavors...</h2>
+      <p class="preloader-subtitle">Loading 225 high-definition cinematic frames</p>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloaderBar"></div>
+      </div>
+      <div class="preloader-stats">
+        <span id="loadPercent">0%</span>
+        <span id="loadCount">0 / 225 Frames</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN SCROLL ANIMATION CONTAINER -->
+  <main>
+    <section class="scroll-hero-section" id="scroll-hero">
+      
+      <!-- Sticky Canvas Container -->
+      <div class="sticky-canvas-container" id="canvasSticky">
+        <canvas id="animationCanvas"></canvas>
+        <div class="canvas-vignette"></div>
+        <div class="canvas-glow"></div>
+
+        <!-- Floating Particles Container -->
+        <div class="particles-layer" id="particlesContainer"></div>
+
+        <!-- Scroller / Progress Controls UI -->
+        <div class="canvas-hud">
+          <!-- Chapter Nav Dots -->
+          <div class="chapter-indicator" id="chapterNav">
+            <button class="chap-dot active" data-progress="0" title="Genesis"><span>01</span><label>Awaken</label></button>
+            <button class="chap-dot" data-progress="0.33" title="Eruption"><span>02</span><label>Eruption</label></button>
+            <button class="chap-dot" data-progress="0.66" title="Aroma"><span>03</span><label>Infusion</label></button>
+            <button class="chap-dot" data-progress="1.0" title="The Masala"><span>04</span><label>Arrival</label></button>
+          </div>
+
+
+        </div>
+
+        <!-- STORY CARD 1: Initial (0% - 22%) -->
+        <div class="story-overlay story-step" id="storyStep1" data-step="1">
+          <div class="glass-story-card align-center">
+            <div class="gold-badge">THE ROYAL TASTE OF MAHARASHTRA</div>
+            <h1 class="story-hero-title">
+              <span class="highlight-marathi">कोल्हापुरी</span>
+              <span class="highlight-gold">कांदा लसूण मसाला</span>
+            </h1>
+            <p class="story-lead">
+              The legendary crimson soul of authentic Maratha cooking. Sun-dried Sankeshwari chilies pounded with caramelized onions & golden garlic.
+            </p>
+            <div class="scroll-prompt-indicator">
+              <div class="mouse-icon">
+                <div class="mouse-wheel"></div>
+              </div>
+              <span>Scroll down to ignite the spices</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STORY CARD 2: Explosion (28% - 50%) -->
+        <div class="story-overlay story-step" id="storyStep2" data-step="2">
+          <div class="glass-story-card align-left">
+            <div class="spice-burst-tag">🔥 FLAVOR ERUPTION</div>
+            <h2 class="story-title">32 Sacred Spices Pounded to Fiery Perfection</h2>
+            <p class="story-desc">
+              Watch every microscopic crystal explode into life. Dagad Phool (Stone Flower), Star Anise, Cinnamon bark, and fiery Lavangi red chilies unleash their aromatic volatile oils in a breathtaking cloud of authentic flavor.
+            </p>
+            <div class="story-pills">
+              <span class="pill">⚡ Stone Ground Mortar</span>
+              <span class="pill">🌱 Zero Additives</span>
+              <span class="pill">🔴 High Natural Oleoresin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STORY CARD 3: Infusion (55% - 78%) -->
+        <div class="story-overlay story-step" id="storyStep3" data-step="3">
+          <div class="glass-story-card align-right">
+            <div class="spice-burst-tag">🧅 THE SIGNATURE ROAST</div>
+            <h2 class="story-title">Caramelized Onion & Cold-Pressed Garlic</h2>
+            <p class="story-desc">
+              The unmistakable heart of Kolhapuri cuisine: sweet Maharashtra onions slow-roasted to deep mahogany umami, blended with pungent indigenous garlic. Creates the glossy crimson <em>"Tarri"</em> (कट) that crowns every legendary Kolhapuri curry.
+            </p>
+            <div class="feature-metrics">
+              <div class="metric-item">
+                <span class="metric-val">48h</span>
+                <span class="metric-lbl">Sun-Dried</span>
+              </div>
+              <div class="metric-divider"></div>
+              <div class="metric-item">
+                <span class="metric-val">100%</span>
+                <span class="metric-lbl">Natural Cold Oil</span>
+              </div>
+              <div class="metric-divider"></div>
+              <div class="metric-item">
+                <span class="metric-val">Zero</span>
+                <span class="metric-lbl">Colors Added</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STORY CARD 4: Masala Pack Arrival (82% - 100%) -->
+        <div class="story-overlay story-step" id="storyStep4" data-step="4">
+          <div class="glass-story-card product-reveal-card">
+            <div class="gold-badge">CRAFTED FOR ROYAL HOMES</div>
+            <h2 class="story-title">DR Tastes Kolhapuri Masala</h2>
+            <p class="story-subtitle">कोल्हापुरी कांदा लसूण मसाला — Pack of Pure Heritage</p>
+            <p class="story-desc compact">
+              No need to measure garam masala, red chili, or coriander separately. Just two spoonfuls transform mutton, chicken, misal, paneer, and dals into authentic Kolhapuri feasts.
+            </p>
+            <div class="product-quick-buy">
+              <div class="price-box">
+                <span class="currency">₹</span>
+                <span class="amount">180</span>
+                <span class="weight">/ 500g pouch</span>
+              </div>
+              <div class="cta-group">
+                <button class="primary-cta-btn add-to-cart-quick" data-size="500g" data-price="180">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                  Add to Cart
+                </button>
+                <a href="#recipes" class="secondary-cta-btn">View Recipes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Virtual Scroll Track (creates 600vh height to drive the animation smoothly) -->
+      <div class="scroll-track-spacer"></div>
+    </section>
+
+    <!-- SECTION: SPICE ANATOMY -->
+    <section class="section-container" id="spice-anatomy">
+      <div class="section-header">
+        <span class="section-tag">HERITAGE BLEND</span>
+        <h2 class="section-title">The Anatomy of Authentic Kolhapuri Masala</h2>
+        <p class="section-subtitle">Every pinch contains time-tested ingredients harvested at peak potency from Maharashtra's soil</p>
+      </div>
+
+      <div class="spices-grid">
+        <div class="spice-card">
+          <div class="spice-icon-box">🌶️</div>
+          <h3>Sankeshwari Chilies</h3>
+          <p>Famed for their deep, incandescent crimson hue and sharp, crisp front-palate warmth without harshness.</p>
+          <div class="spice-stat">Role: Color & Instant Punch</div>
+        </div>
+
+        <div class="spice-card">
+          <div class="spice-icon-box">🔥</div>
+          <h3>Lavangi Chilies</h3>
+          <p>Small, potent, and fiery. Provides the authentic lingering warmth that defines Kolhapuri "Zanzanit" dishes.</p>
+          <div class="spice-stat">Role: Royal Heat Depth</div>
+        </div>
+
+        <div class="spice-card">
+          <div class="spice-icon-box">🧅</div>
+          <h3>Caramelized Onion</h3>
+          <p>Slowly sautéed in iron kadais until dark mahogany brown, delivering rich sweetness and rich gravy body.</p>
+          <div class="spice-stat">Role: Natural Umami & Thick Rassa</div>
+        </div>
+
+        <div class="spice-card">
+          <div class="spice-icon-box">🧄</div>
+          <h3>Indigenous Garlic</h3>
+          <p>Strong, small-clove organic garlic crushed and tempered to infuse irresistible aroma into every bite.</p>
+          <div class="spice-stat">Role: Pungent Fragrance</div>
+        </div>
+
+        <div class="spice-card">
+          <div class="spice-icon-box">🌿</div>
+          <h3>Dagad Phool (Stone Flower)</h3>
+          <p>A lichen harvested from forest rocks, giving Kolhapuri gravies their iconic earthy, smoky forest aroma.</p>
+          <div class="spice-stat">Role: Smoky Signature Aroma</div>
+        </div>
+
+        <div class="spice-card">
+          <div class="spice-icon-box">✨</div>
+          <h3>Star Anise & Nagkeshar</h3>
+          <p>Royal Maratha spices introduced during royal banquets, providing sweet floral top notes and balance.</p>
+          <div class="spice-stat">Role: Royal Aromatic Harmony</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE HEAT GAUGE -->
+    <section class="section-container" id="heat-meter">
+      <div class="heat-gauge-card">
+        <div class="section-header">
+          <span class="section-tag">TAILORED FOR YOUR TONGUE</span>
+          <h2 class="section-title">Interactive "Zanzanit" Heat Meter</h2>
+          <p class="section-subtitle">Adjust the heat level to see how DR Tastes Masala balances spice and savor in different dishes</p>
+        </div>
+
+        <div class="heat-interactive-area">
+          <div class="heat-scale-slider-wrap">
+            <div class="heat-labels">
+              <span class="label-opt" data-level="1">1. Gentle Savor</span>
+              <span class="label-opt" data-level="2">2. Medium Punch</span>
+              <span class="label-opt active" data-level="3">3. Authentic Zanzanit</span>
+              <span class="label-opt" data-level="4">4. Shahu Royal Agni</span>
+            </div>
+            <input type="range" id="heatSlider" min="1" max="4" value="3" step="1" class="heat-range-input">
+            <div class="heat-meter-progress-track">
+              <div class="heat-meter-fill" id="heatMeterFill" style="width: 75%;"></div>
+            </div>
+          </div>
+
+          <div class="heat-display-plate" id="heatPlate">
+            <div class="dish-visual-glow" id="dishGlow"></div>
+            <div class="heat-profile-content">
+              <div class="heat-emojis" id="heatEmojis">🌶️🌶️🌶️</div>
+              <h3 class="heat-title" id="heatLevelTitle">Authentic Zanzanit (झणझणीत)</h3>
+              <p class="heat-description" id="heatLevelDesc">
+                The golden benchmark of Kolhapur! Fiery crimson "Tarri" floating on a rich, aromatic broth. Gives you a warm forehead sweat and makes your tastebuds sing with deep savory joy.
+              </p>
+              <div class="heat-best-for">
+                <strong>Perfect for:</strong> <span id="heatBestFor">Tambada Rassa, Misal Pav, Spicy Chicken Sukka</span>
+              </div>
+              <div class="heat-dosage">
+                <strong>Recommended Spoonfuls:</strong> <span id="heatDosage">2 full tablespoons per 500g meat/veggies</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: ROYAL RECIPES -->
+    <section class="section-container" id="recipes">
+      <div class="section-header">
+        <span class="section-tag">CHEF CURATED</span>
+        <h2 class="section-title">Royal Kolhapuri Creations</h2>
+        <p class="section-subtitle">Cook iconic Maharashtrian masterpieces with DR Tastes Kanda Lasun Masala</p>
+      </div>
+
+      <!-- Recipe Tabs -->
+      <div class="recipe-tabs-nav">
+        <button class="recipe-tab-btn active" data-recipe="tambada">तांबडा रस्सा (Tambada Rassa)</button>
+        <button class="recipe-tab-btn" data-recipe="misal">कोल्हापुरी मिसळ (Misal Pav)</button>
+        <button class="recipe-tab-btn" data-recipe="sukka">सुक्का चिकन (Sukka Chicken)</button>
+        <button class="recipe-tab-btn" data-recipe="shevbhaji">झणझणीत शेव भाजी (Shev Bhaji)</button>
+      </div>
+
+      <!-- Recipe Content Display -->
+      <div class="recipe-card" id="recipeDisplayCard">
+        <div class="recipe-grid">
+          <div class="recipe-meta-pane">
+            <span class="recipe-badge" id="recBadge">Signature Kolhapur Stew</span>
+            <h3 class="recipe-heading" id="recTitle">Kolhapuri Tambada Rassa (तांबडा रस्सा)</h3>
+            <p class="recipe-summary" id="recSummary">
+              The crown jewel of Kolhapuri mutton and chicken banquets. A thin, searingly aromatic crimson soup topped with a shimmering layer of spiced red oil.
+            </p>
+            <div class="recipe-quick-stats">
+              <div class="stat"><span class="val">35 mins</span><span class="lbl">Prep Time</span></div>
+              <div class="stat"><span class="val">4 Servings</span><span class="lbl">Yield</span></div>
+              <div class="stat"><span class="val">Spicy ★★★</span><span class="lbl">Heat Level</span></div>
+            </div>
+            <div class="pro-tip-box">
+              <strong>👑 Royal Secret:</strong> <span id="recTip">Never add extra garam masala or turmeric. DR Tastes Masala has the exact ratio of stone flower and roasted spices pre-balanced!</span>
+            </div>
+          </div>
+
+          <div class="recipe-instructions-pane">
+            <h4>Simple 4-Step Method</h4>
+            <ol class="recipe-steps-list" id="recSteps">
+              <li><strong>Boil Broth:</strong> Boil mutton or chicken with turmeric, salt, and ginger-garlic paste until tender to create a rich aromatic stock.</li>
+              <li><strong>Temper Aromatics:</strong> In a clay pot or heavy kadai, heat 3 tbsp oil. Add crushed onion paste and sauté until golden oil separates.</li>
+              <li><strong>The Magic Masala:</strong> Add 2 generous tablespoons of <em>DR Tastes Kolhapuri Kanda Lasun Masala</em>. Sauté on low flame for 60 seconds until the crimson fragrance fills your kitchen.</li>
+              <li><strong>Simmer & Serve:</strong> Pour in the strained boiling mutton stock. Let it roll to a furious boil for 5 minutes until the majestic red "Tarri" surfaces. Garnish with fresh coriander and serve boiling hot with Bhakri!</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PRODUCT PACKS & SHOPPING -->
+    <section class="section-container" id="shop-section">
+      <div class="section-header">
+        <span class="section-tag">FRESH BATCH PACKAGING</span>
+        <h2 class="section-title">Select Your Heritage Pack</h2>
+        <p class="section-subtitle">Vacuum-sealed in multilayer aroma-lock barrier pouches to keep that freshly ground fragrance intact</p>
+      </div>
+
+      <div class="product-cards-grid">
+        <!-- 100g -->
+        <div class="pack-card">
+          <div class="pack-badge">Trial Pouch</div>
+          <h3 class="pack-weight">100g</h3>
+          <p class="pack-for">Perfect for 3-4 family meals</p>
+          <div class="pack-price">
+            <span class="cur">₹</span>
+            <span class="val">45</span>
+          </div>
+          <ul class="pack-perks">
+            <li>✓ Triple-layer aroma lock</li>
+            <li>✓ Freshly packed this week</li>
+            <li>✓ Perfect starter size</li>
+          </ul>
+          <button class="add-to-cart-btn" data-size="100g" data-price="45">Add To Cart</button>
+        </div>
+
+        <!-- 250g -->
+        <div class="pack-card">
+          <div class="pack-badge">Kitchen Favorite</div>
+          <h3 class="pack-weight">250g</h3>
+          <p class="pack-for">Everyday spice staple for 2 weeks</p>
+          <div class="pack-price">
+            <span class="cur">₹</span>
+            <span class="val">95</span>
+          </div>
+          <ul class="pack-perks">
+            <li>✓ Resealable zip-lock seal</li>
+            <li>✓ Includes authentic recipe card</li>
+            <li>✓ Free shipping eligible</li>
+          </ul>
+          <button class="add-to-cart-btn" data-size="250g" data-price="95">Add To Cart</button>
+        </div>
+
+        <!-- 500g Popular -->
+        <div class="pack-card featured">
+          <div class="featured-ribbon">MOST POPULAR</div>
+          <div class="pack-badge">Best Value</div>
+          <h3 class="pack-weight">500g</h3>
+          <p class="pack-for">The complete family banquet pouch</p>
+          <div class="pack-price">
+            <span class="cur">₹</span>
+            <span class="val">180</span>
+          </div>
+          <ul class="pack-perks">
+            <li>✓ Save ₹15 vs smaller packs</li>
+            <li>✓ Stays fresh for 12 months</li>
+            <li>✓ Free Kolhapuri cooking guide</li>
+            <li>✓ Priority express shipping</li>
+          </ul>
+          <button class="add-to-cart-btn primary-glow" data-size="500g" data-price="180">Add To Cart</button>
+        </div>
+
+        <!-- 1kg -->
+        <div class="pack-card">
+          <div class="pack-badge">Feast Pack</div>
+          <h3 class="pack-weight">1 kg</h3>
+          <p class="pack-for">For restaurants, catering & food lovers</p>
+          <div class="pack-price">
+            <span class="cur">₹</span>
+            <span class="val">340</span>
+          </div>
+          <ul class="pack-perks">
+            <li>✓ Maximum savings per gram</li>
+            <li>✓ Heavy duty foil pouch</li>
+            <li>✓ Free shipping across India</li>
+          </ul>
+          <button class="add-to-cart-btn" data-size="1kg" data-price="340">Add To Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: REVIEWS -->
+    <section class="section-container" id="reviews">
+      <div class="section-header">
+        <span class="section-tag">TESTED & BELOVED</span>
+        <h2 class="section-title">Praise from True Kolhapuri Foodies</h2>
+        <p class="section-subtitle">Over 15,000+ satisfied households across Maharashtra and beyond</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-body">
+            "मी स्वतः कोल्हापूरचा आहे, मुंबईत राहतो. कित्येक दिवस आईच्या हातच्या तांबड्या रस्स्याची चव आठवत होती. DR Tastes ने हुबेहूब तीच चव दिली! अस्सल झणझणीत चव!"
+          </p>
+          <div class="reviewer-info">
+            <strong>महेश पाटील (Mahesh Patil)</strong>
+            <span>Dadar, Mumbai</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-body">
+            "The garlic and roasted onion flavor is so authentic. You don't need any other spices when making mutton curry or misal. The red tarri color looks like a 5-star hotel!"
+          </p>
+          <div class="reviewer-info">
+            <strong>Pooja Deshmukh</strong>
+            <span>Pune</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-body">
+            "I run a small cloud kitchen specializing in Maharashtrian cuisine. Switching to DR Tastes Masala increased our customer repeat rate by 40%. Consistency is unmatched."
+          </p>
+          <div class="reviewer-info">
+            <strong>Chef Rohit Sawant</strong>
+            <span>Thane</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE-OVER SHOPPING CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title-row">
+        <h3>Your Spice Basket</h3>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">&times;</button>
+      </div>
+      <p class="cart-sub">Authentic DR Tastes Masala fresh from Kolhapur</p>
+    </div>
+
+    <div class="cart-items-list" id="cartItemsList">
+      <!-- Items dynamically populated via JS -->
+      <div class="empty-cart-message" id="emptyCartMsg">
+        <span class="empty-icon">🛒</span>
+        <p>Your basket is currently empty.</p>
+        <button class="secondary-cta-btn" id="browsePacksBtn">Explore Masala Packs</button>
+      </div>
+    </div>
+
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span class="summary-val" id="cartSubtotal">₹0</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Delivery</span>
+        <span class="summary-val" id="cartShipping">₹49 (Free above ₹499)</span>
+      </div>
+      <div class="cart-summary-line total-line">
+        <span>Estimated Total</span>
+        <span class="summary-val" id="cartTotal">₹0</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">
+        Proceed to Secure Checkout
+      </button>
+      <div class="trust-icons-row">
+        <span>🔒 256-Bit SSL Encrypted</span>
+        <span>⚡ Fast Dispatch</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- QUICK TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toast">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message" id="toastMessage">Item added to cart!</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <div class="logo-emblem sm">DR</div>
+          <span class="footer-brand-title">DR TASTES</span>
+        </div>
+        <p class="footer-about">
+          Preserving the fiery soul and culinary royalty of Kolhapuri cuisine. Handcrafted with pride in Maharashtra.
+        </p>
+        <p class="fssai-tag">🛡️ FSSAI Lic. No: 11521034000845</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#scroll-hero">Animation Experience</a></li>
+          <li><a href="#spice-anatomy">Spices Breakdown</a></li>
+          <li><a href="#heat-meter">Zanzanit Heat Scale</a></li>
+          <li><a href="#recipes">Authentic Recipes</a></li>
+          <li><a href="#shop-section">Order Packs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Culinary Help</h4>
+        <ul>
+          <li><a href="#recipes">Tambada Rassa Guide</a></li>
+          <li><a href="#recipes">Kolhapuri Misal Secret</a></li>
+          <li><a href="#heat-meter">Spice Level Recommendations</a></li>
+          <li><a href="#shop-section">Bulk & Restaurant Orders</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4>Stay Zanzanit!</h4>
+        <p>Get exclusive recipes & 15% off your first heritage pack.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('धन्यवाद! Welcome to the DR Tastes family. Use code KOLHAPUR15 at checkout.');">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 DR Tastes. All Rights Reserved. Crafted with passion for Kolhapuri heritage.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
